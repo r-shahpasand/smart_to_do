@@ -119,6 +119,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
           description: taskDescText,
           isCompleted: false,
           priority: _selectedValue ?? Priority.low,
+          creationTime: DateTime.now(),
         ),
       );
       Navigator.of(context).pop();

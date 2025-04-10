@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class Helper {
   static final Helper _singleton = Helper._internal();
 
@@ -7,6 +10,15 @@ class Helper {
 
   Helper._internal();
 
+  void showSnackBar(BuildContext context, String message, {bool isError = false}) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: isError ? Colors.red : Colors.green,
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
   String formatDateTime(DateTime dateTime, {bool includeTime = true}) {
     final months = [
       'January', 'February', 'March', 'April', 'May', 'June',

@@ -21,16 +21,25 @@ class TaskTile extends StatelessWidget {
         children: [
           task.description != null ? Text(task.description!) : SizedBox(),
           Row(
-            children: [
-              Text('Priority: '),
-              Text(task.priority.name)
-            ],
+            children: [Text('Priority: '), Text(task.priority.name)],
           )
         ],
       ),
-      leading: Checkbox(
-        value: task.isCompleted,
-        onChanged: (value) => onChanged(value ?? false),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text('Done?'),
+          SizedBox(width: 4),
+          IconButton(
+            onPressed: onChanged(!task.isCompleted),
+            icon: Icon(
+              task.isCompleted
+                  ? Icons.check_box
+                  : Icons.cancel_presentation_outlined,
+              color: task.isCompleted ? Colors.green : Colors.red,
+            ),
+          ),
+        ],
       ),
     );
   }
