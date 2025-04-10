@@ -73,7 +73,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  ///TODO: implement sorting tasks
   void onSort() => Helper().showSnackBar(context, 'Coming soon...');
 
+  ///TODO: implement filtering tasks
   void onFilter() => Helper().showSnackBar(context, 'Coming soon...');
 }

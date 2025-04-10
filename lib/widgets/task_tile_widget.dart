@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_to_do/models/task.dart';
+import 'package:smart_to_do/utils/helper.dart';
 
 class TaskTile extends StatelessWidget {
   final Task task;
@@ -16,6 +17,8 @@ class TaskTile extends StatelessWidget {
     return ListTile(
       title: Text(task.title),
       isThreeLine: true,
+      ///TODO: implement on task tap
+      onTap: () => Helper().showSnackBar(context, 'Coming soon...'),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
