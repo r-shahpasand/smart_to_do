@@ -1,7 +1,7 @@
 import 'package:smart_to_do/models/priority.dart';
 
 class Task {
-  final String id;
+  final int id;
   final String title;
   final String? description;
   final bool isCompleted;
