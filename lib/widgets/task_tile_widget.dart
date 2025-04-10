@@ -15,7 +15,19 @@ class TaskTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(task.title),
-      subtitle: task.description != null ? Text(task.description!) : SizedBox(),
+      isThreeLine: true,
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          task.description != null ? Text(task.description!) : SizedBox(),
+          Row(
+            children: [
+              Text('Priority: '),
+              Text(task.priority.name)
+            ],
+          )
+        ],
+      ),
       leading: Checkbox(
         value: task.isCompleted,
         onChanged: (value) => onChanged(value ?? false),
